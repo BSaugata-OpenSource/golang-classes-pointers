@@ -1,13 +1,11 @@
-name: Build and Publish Go projects
+name: Build and Publish Go Classes Pointers
 
 on:
   workflow_dispatch:
-
-  workflow_call:
-    inputs:
-      imagetag:
-        required: true
-        type: string
+  workflow_run:
+    workflows: [Build and Publish What Is Golang]
+    types:
+      - completed
 
 jobs:
   log_context_values:
